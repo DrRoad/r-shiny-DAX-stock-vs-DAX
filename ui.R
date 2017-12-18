@@ -42,9 +42,7 @@ shinyUI(pageWithSidebar(
     # submitButton("Update View")
   ),
   
-  # Show a summary of the dataset and an HTML table with the requested
-  # number of observations. Note the use of the h4 function to provide
-  # an additional header above each output section.
+  # Show a hierarchy of panels with plots 
   mainPanel(
     
     tabsetPanel(
