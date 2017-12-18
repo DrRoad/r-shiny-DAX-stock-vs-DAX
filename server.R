@@ -43,6 +43,7 @@ shinyServer(function(input, output) {
     
   })
   
+  # generate a plot
   output$histogram.GDAXI <- renderPlot({
     
     AdjustedPrice <- datasetInput()[,1,drop=FALSE]
@@ -52,6 +53,7 @@ shinyServer(function(input, output) {
     
   })
   
+  # generate a plot
   output$histogram.stockdata <- renderPlot({
     
     AdjustedPrice <- datasetInput()[,2,drop=FALSE]
@@ -61,6 +63,7 @@ shinyServer(function(input, output) {
     
   })
   
+  # generate a plot
   output$boxplot <- renderPlot({
     
     AdjustedPrice <- datasetInput()
