@@ -38,7 +38,8 @@ shinyServer(function(input, output) {
 
     AdjustedPrice <- datasetInput()
     
-    Returns <- AdjustedPrice/lag(AdjustedPrice, 1) -1
+    
+    Returns <- AdjustedPrice/lag(AdjustedPrice, 1) -1 # daily returns
     charts.PerformanceSummary(Returns)
     
   })
@@ -47,7 +48,7 @@ shinyServer(function(input, output) {
   output$histogram.GDAXI <- renderPlot({
     
     AdjustedPrice <- datasetInput()[,1,drop=FALSE]
-    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1
+    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1 # ~ monthly returns (because 1 month ~ 25 business days)
     
     chart.Histogram(Returns, methods = c( "add.density", "add.normal"), xlim = c(-0.4, 0.4))
     
@@ -57,7 +58,7 @@ shinyServer(function(input, output) {
   output$histogram.stockdata <- renderPlot({
     
     AdjustedPrice <- datasetInput()[,2,drop=FALSE]
-    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1
+    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1 # ~ monthly returns (because 1 month ~ 25 business days)
     
     chart.Histogram(Returns, methods = c( "add.density", "add.normal"), xlim = c(-0.4, 0.4))
     
@@ -67,7 +68,7 @@ shinyServer(function(input, output) {
   output$boxplot <- renderPlot({
     
     AdjustedPrice <- datasetInput()
-    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1
+    Returns <- AdjustedPrice/lag(AdjustedPrice, 25) -1 # ~ monthly returns (because 1 month ~ 25 business days)
     
     chart.Boxplot(Returns)
     
