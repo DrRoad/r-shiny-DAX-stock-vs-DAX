@@ -1,8 +1,7 @@
 library(shiny)
-require(htmltab)
 
 ## Initialization
-  require(htmltab)
+  library(htmltab)
   {## get dax components names
     
     tabledata.url <- "https://en.wikipedia.org/wiki/DAX"
