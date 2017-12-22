@@ -1,5 +1,4 @@
 library(shiny)
-library(datasets)
 library(quantmod)
 library(PerformanceAnalytics)
 
